@@ -1,0 +1,1946 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddPhotosTable (20130319141531)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "photos" ("id" serial primary key, "url" character varying(255), "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141531')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddAlbumTable (20130319141703)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141703')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.7ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "photos" ("name", "url") VALUES ($1, $2) RETURNING "id"[0m  [["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "photos" ("name", "url") VALUES ($1, $2) RETURNING "id"[0m  [["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddPhotosTable (20130319141531)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "photos" ("id" serial primary key, "url" character varying(255), "name" character varying(255), "album_id" integer) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141531')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddAlbumTable (20130319141703)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141703')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"  [["name", "Cities"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"  [["name", "Cities"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.1ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"  [["name", "Cities"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (31.5ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"  [["name", "Cities"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mUPDATE "photos" SET "album_id" = 13 WHERE "photos"."id" = 16[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 13[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "nyc"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (32.8ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cities"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "albums" ("name") VALUES ($1) RETURNING "id"  [["name", "Cities"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "photos" SET "album_id" = 16 WHERE "photos"."id" = 19
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 16
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddPhotosTable (20130319141531)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "photos" ("id" serial primary key, "url" character varying(255), "name" character varying(255), "album_id" integer) [0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141531')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddAlbumTable (20130319141703)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130319141703')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:04:58 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE "photos" SET "album_id" = 3 WHERE "photos"."id" = 3
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 3
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "photos" SET "album_id" = 5 WHERE "photos"."id" = 4
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 5
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 15:18:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 11:18:03 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (4.0ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_body.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:44:54 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:44:54 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:44:54 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:44:54 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "photos" SET "album_id" = 8 WHERE "photos"."id" = 8
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 8
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 11:44:54 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 57ms
+
+NameError - undefined local variable or method `new_album_path' for #<#<Class:0x007ff11b7f2fd8>:0x007ff11c9aca08>:
+  app/views/home/index.html.haml:2:in `_app_views_home_index_html_haml___2782697504100336046_70336786858120'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:145:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__458423396070968969__process_action__2872995819500936465__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/app_request_handler.rb:11:in `call'
+  (gem) rack-contrib-1.1.0/lib/rack/contrib/response_headers.rb:17:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/headers.rb:16:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__2579002004503815507__call__862504655583516317__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) rack-test-0.6.2/lib/rack/mock_session.rb:30:in `request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:230:in `process_request'
+  (gem) rack-test-0.6.2/lib/rack/test.rb:57:in `get'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/forwardable.rb:201:in `get'
+  (gem) capybara-2.0.2/lib/capybara/rack_test/browser.rb:59:in `process'
+  (gem) capybara-2.0.2/lib/capybara/rack_test/browser.rb:35:in `process_and_follow_redirects'
+  (gem) capybara-2.0.2/lib/capybara/rack_test/browser.rb:21:in `visit'
+  (gem) capybara-2.0.2/lib/capybara/rack_test/driver.rb:42:in `visit'
+  (gem) capybara-2.0.2/lib/capybara/session.rb:183:in `visit'
+  (gem) capybara-2.0.2/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+  spec/features/albums_spec.rb:7:in `block (3 levels) in <top (required)>'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example.rb:114:in `block in run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example.rb:254:in `with_around_each_hooks'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example.rb:111:in `run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example_group.rb:390:in `block in run_examples'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example_group.rb:386:in `run_examples'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example_group.rb:371:in `run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example_group.rb:372:in `block in run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/example_group.rb:372:in `run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/command_line.rb:28:in `block (2 levels) in run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/command_line.rb:28:in `block in run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/reporter.rb:34:in `report'
+  (gem) rspec-core-2.13.1/lib/rspec/core/command_line.rb:25:in `run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/runner.rb:80:in `run'
+  (gem) rspec-core-2.13.1/lib/rspec/core/runner.rb:17:in `block in autorun'
+  /usr/local/rvm/gems/ruby-1.9.3-p374/bin/ruby_noexec_wrapper:0:in `<main>'
+
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 11:44:57 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 10ms
+
+NameError - undefined local variable or method `new_album_path' for #<#<Class:0x007ff11b7f2fd8>:0x007ff118c58df0>:
+  app/views/home/index.html.haml:2:in `_app_views_home_index_html_haml___2782697504100336046_70336786858120'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:145:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__458423396070968969__process_action__2872995819500936465__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/app_request_handler.rb:11:in `call'
+  (gem) rack-contrib-1.1.0/lib/rack/contrib/response_headers.rb:17:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/headers.rb:16:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__2579002004503815507__call__862504655583516317__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) capybara-2.0.2/lib/capybara/server.rb:19:in `call'
+  (gem) rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+Started POST "/__better_errors/70336740107520/variables" for 127.0.0.1 at 2013-03-19 11:44:57 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:45:01 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 15:45:01 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 11:54:40 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (4.5ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 11:54:41 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (9.1ms)
+  Rendered albums/new.js.erb (10.6ms)
+Completed 500 Internal Server Error in 28ms
+
+Haml::SyntaxError - Indenting at the beginning of the document is illegal.:
+  (gem) haml-4.0.0/lib/haml/error.rb:51:in `initialize'
+  (gem) haml-4.0.0/lib/haml/parser.rb:108:in `parse'
+  (gem) haml-4.0.0/lib/haml/engine.rb:66:in `initialize'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:25:in `compile'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:30:in `call'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:268:in `compile'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:232:in `compile!'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:144:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:15:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  (gem) haml-4.0.0/lib/haml/helpers/action_view_mods.rb:12:in `render_with_haml'
+  app/views/albums/new.js.erb:1:in `_app_views_albums_new_js_erb__517237273404111222_70156283447280'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:145:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__809653121097763552__process_action__2678052055184757608__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/app_request_handler.rb:11:in `call'
+  (gem) rack-contrib-1.1.0/lib/rack/contrib/response_headers.rb:17:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/headers.rb:16:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__2912035931156995167__call__1510884626410663388__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) capybara-2.0.2/lib/capybara/server.rb:19:in `call'
+  (gem) rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 11:54:43 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (35.6ms)[0m  [1mUPDATE "photos" SET "album_id" = 10 WHERE "photos"."id" = 10[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 10[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 15:54:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:17:51 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (3.9ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered layouts/_body.html.erb (29.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:17:54 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.6ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:17:56 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "photos" SET "album_id" = 14 WHERE "photos"."id" = 14
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 14
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 16:17:59 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 16:20:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "photos" SET "album_id" = 18 WHERE "photos"."id" = 18
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 18
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:20:05 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (4.4ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 12:20:05 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (7.4ms)
+  Rendered albums/new.js.erb (8.8ms)
+Completed 500 Internal Server Error in 14ms
+
+Haml::SyntaxError - Indenting at the beginning of the document is illegal.:
+  (gem) haml-4.0.0/lib/haml/error.rb:51:in `initialize'
+  (gem) haml-4.0.0/lib/haml/parser.rb:108:in `parse'
+  (gem) haml-4.0.0/lib/haml/engine.rb:66:in `initialize'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:25:in `compile'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:30:in `call'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:268:in `compile'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:232:in `compile!'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:144:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:15:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  (gem) haml-4.0.0/lib/haml/helpers/action_view_mods.rb:12:in `render_with_haml'
+  app/views/albums/new.js.erb:1:in `_app_views_albums_new_js_erb___4197497690408091122_70150534920860'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:145:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__1292017378189552328__process_action__3170132111991341944__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/app_request_handler.rb:11:in `call'
+  (gem) rack-contrib-1.1.0/lib/rack/contrib/response_headers.rb:17:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/headers.rb:16:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__3309153019081461866__call__1996820413773969538__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) capybara-2.0.2/lib/capybara/server.rb:19:in `call'
+  (gem) rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:20:07 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.6ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 12:20:10 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 12:20:10 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.4ms)
+  Rendered albums/new.js.erb (1.6ms)
+Completed 500 Internal Server Error in 2ms
+
+Haml::SyntaxError - Indenting at the beginning of the document is illegal.:
+  (gem) haml-4.0.0/lib/haml/error.rb:51:in `initialize'
+  (gem) haml-4.0.0/lib/haml/parser.rb:108:in `parse'
+  (gem) haml-4.0.0/lib/haml/engine.rb:66:in `initialize'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:25:in `compile'
+  (gem) haml-4.0.0/lib/haml/template/plugin.rb:30:in `call'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:268:in `compile'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:232:in `compile!'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:144:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:15:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+  (gem) haml-4.0.0/lib/haml/helpers/action_view_mods.rb:12:in `render_with_haml'
+  app/views/albums/new.js.erb:1:in `_app_views_albums_new_js_erb___4197497690408091122_70150534920860'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:145:in `block in render'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/template.rb:143:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/template_renderer.rb:18:in `render'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:36:in `render_template'
+  (gem) actionpack-3.2.12/lib/action_view/renderer/renderer.rb:17:in `render'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:110:in `_render_template'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:88:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:16:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  (gem) activesupport-3.2.12/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:39:in `render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:414:in `_run__1292017378189552328__process_action__3170132111991341944__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.12/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.12/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.12/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.12/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/app_request_handler.rb:11:in `call'
+  (gem) rack-contrib-1.1.0/lib/rack/contrib/response_headers.rb:17:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/headers.rb:16:in `call'
+  (gem) meta_request-0.2.2/lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.12/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `_run__3309153019081461866__call__1996820413773969538__callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.12/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.12/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.12/lib/rails/rack/logger.rb:16:in `call'
+  (gem) quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.12/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.12/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.12/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.12/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/builder.rb:134:in `call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:64:in `block in call'
+  (gem) rack-1.4.5/lib/rack/urlmap.rb:49:in `call'
+  (gem) capybara-2.0.2/lib/capybara/server.rb:19:in `call'
+  (gem) rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-1.9.3-p374/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:26:39 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (4.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  Rendered albums/_albums.html.haml (95.6ms)
+  Rendered home/index.html.haml within layouts/application (104.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_body.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 126ms (Views: 61.9ms | ActiveRecord: 63.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (12.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:26:39 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:26:39 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/albums/19" for 127.0.0.1 at 2013-03-19 14:26:39 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"19"}
+  Rendered albums/show.html.haml within layouts/application (0.6ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:26:42 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.6ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  Rendered albums/_albums.html.haml (4.7ms)
+  Rendered home/index.html.haml within layouts/application (5.6ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 3.7ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:42 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (9.4ms)
+  Rendered albums/new.js.erb (10.6ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:26:42 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:26:42 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:26:42 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  Rendered albums/_albums.html.haml (31.7ms)
+  Rendered albums/create.js.erb (32.8ms)
+Completed 200 OK in 41ms (Views: 31.1ms | ActiveRecord: 8.3ms)
+Started GET "/albums/20" for 127.0.0.1 at 2013-03-19 14:26:43 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"20"}
+  Rendered albums/show.html.haml within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:26:43 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.2ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  Rendered albums/_albums.html.haml (2.5ms)
+  Rendered home/index.html.haml within layouts/application (3.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:43 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.6ms)
+  Rendered albums/new.js.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:26:43 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  Rendered albums/_albums.html.haml (2.0ms)
+  Rendered home/index.html.haml within layouts/application (2.6ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:43 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.5ms)
+  Rendered albums/new.js.erb (1.8ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  Rendered albums/_albums.html.haml (2.5ms)
+  Rendered home/index.html.haml within layouts/application (3.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.6ms)
+  Rendered albums/new.js.erb (1.9ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:26:44 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:26:44 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  Rendered albums/_albums.html.haml (3.3ms)
+  Rendered albums/create.js.erb (3.6ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.6ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.8ms)
+  Rendered albums/new.js.erb (2.2ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Cats"}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:26:44 UTC +00:00], ["name", "Cats"], ["updated_at", Tue, 19 Mar 2013 18:26:44 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  Rendered albums/_albums.html.haml (6.0ms)
+  Rendered albums/create.js.erb (6.7ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 2.3ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:26:44 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (48.0ms)
+  Rendered albums/new.js.erb (48.4ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:26:45 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Horses"}, "commit"=>"Create Album"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:26:45 UTC +00:00], ["name", "Horses"], ["updated_at", Tue, 19 Mar 2013 18:26:45 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (7.1ms)
+  Rendered albums/create.js.erb (7.4ms)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 4.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:26:47 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 18:26:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:26:47 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:26:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:40:13 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.9ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (40.1ms)
+  Rendered home/index.html.haml within layouts/application (74.6ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 89ms (Views: 73.6ms | ActiveRecord: 15.0ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:40:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mAlbum Load (0.7ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (11.3ms)
+  Rendered home/index.html.haml within layouts/application (12.2ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 5.6ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:16 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (7.9ms)
+  Rendered albums/new.js.erb (9.1ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:40:16 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (49.2ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:40:16 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:40:16 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.5ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (7.7ms)
+  Rendered albums/create.js.erb (8.9ms)
+Completed 200 OK in 65ms (Views: 10.4ms | ActiveRecord: 51.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:18 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/albums/27" for 127.0.0.1 at 2013-03-19 14:40:18 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"27"}
+  Rendered albums/show.html.haml within layouts/application (0.6ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:40:19 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (6.0ms)
+  Rendered home/index.html.haml within layouts/application (6.6ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 1.5ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:19 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.6ms)
+  Rendered albums/new.js.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:40:19 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (340.9ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (347.3ms)
+  Rendered home/index.html.haml within layouts/application (348.4ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 353ms (Views: 9.8ms | ActiveRecord: 342.5ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:20 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.5ms)
+  Rendered albums/new.js.erb (1.8ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:40:20 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:40:20 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:40:20 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.4ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (7.9ms)
+  Rendered albums/create.js.erb (8.3ms)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 4.0ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:20 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.6ms)
+  Rendered albums/new.js.erb (1.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:40:20 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Cats"}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:40:20 UTC +00:00], ["name", "Cats"], ["updated_at", Tue, 19 Mar 2013 18:40:20 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.4ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (8.7ms)
+  Rendered albums/create.js.erb (9.0ms)
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 3.9ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:20 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.6ms)
+  Rendered albums/new.js.erb (1.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:40:21 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Horses"}, "commit"=>"Create Album"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:21 UTC +00:00], ["name", "Horses"], ["updated_at", Tue, 19 Mar 2013 18:40:21 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mAlbum Load (0.5ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30
+  Rendered albums/_albums.html.haml (54.9ms)
+  Rendered albums/create.js.erb (55.3ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 4.9ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:40:23 -0400
+Processing by HomeController#index as HTML
+  [1m[36mAlbum Load (0.4ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  Rendered albums/_albums.html.haml (8.9ms)
+  Rendered home/index.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 2.7ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:40:23 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.8ms)
+  Rendered albums/new.js.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 18:40:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "nyc"], ["url", "nyc.jpg"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT "photos".* FROM "photos" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:53 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:53 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:40:53 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:53 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/albums/36" for 127.0.0.1 at 2013-03-19 14:40:56 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"36"}
+  Rendered albums/show.html.haml within layouts/application (45.6ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_body.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 65.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:40:58 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:40:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/albums/37" for 127.0.0.1 at 2013-03-19 14:40:58 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"37"}
+  Rendered albums/show.html.haml within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.5ms)
+  Rendered layouts/_body.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:41:01 -0400
+Processing by HomeController#index as HTML
+  [1m[36mAlbum Load (0.6ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  Rendered albums/_albums.html.haml (68.9ms)
+  Rendered home/index.html.haml within layouts/application (71.3ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 75ms (Views: 66.9ms | ActiveRecord: 8.1ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:01 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (6.9ms)
+  Rendered albums/new.js.erb (8.1ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:41:01 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:41:01 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:41:01 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mAlbum Load (1.0ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20
+  [1m[36m (35.9ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (48.7ms)
+  Rendered albums/create.js.erb (49.7ms)
+Completed 200 OK in 56ms (Views: 13.6ms | ActiveRecord: 40.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:41:03 UTC +00:00], ["name", "Cities"], ["updated_at", Tue, 19 Mar 2013 18:41:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/albums/39" for 127.0.0.1 at 2013-03-19 14:41:03 -0400
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"39"}
+  Rendered albums/show.html.haml within layouts/application (0.2ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:41:03 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.6ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (9.9ms)
+  Rendered home/index.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 2.7ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:04 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.7ms)
+  Rendered albums/new.js.erb (2.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:41:04 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (8.8ms)
+  Rendered home/index.html.haml within layouts/application (9.4ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 2.8ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:04 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.5ms)
+  Rendered albums/new.js.erb (1.8ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:41:04 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.5ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (9.3ms)
+  Rendered home/index.html.haml within layouts/application (9.9ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-03-19 14:41:05 -0400
+Processing by HomeController#index as HTML
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23[0m
+  Rendered albums/_albums.html.haml (9.2ms)
+  Rendered home/index.html.haml within layouts/application (9.8ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+  Rendered layouts/_body.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 2.7ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:05 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.5ms)
+  Rendered albums/new.js.erb (1.8ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:41:05 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Dogs"}, "commit"=>"Create Album"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:41:05 UTC +00:00], ["name", "Dogs"], ["updated_at", Tue, 19 Mar 2013 18:41:05 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 40
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  Rendered albums/_albums.html.haml (9.1ms)
+  Rendered albums/create.js.erb (9.5ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 2.8ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:05 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.7ms)
+  Rendered albums/new.js.erb (2.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:41:06 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Cats"}, "commit"=>"Create Album"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Tue, 19 Mar 2013 18:41:06 UTC +00:00], ["name", "Cats"], ["updated_at", Tue, 19 Mar 2013 18:41:06 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" ORDER BY name[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 41[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 40
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (9.9ms)
+  Rendered albums/create.js.erb (10.2ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 2.8ms)
+Started GET "/albums/new" for 127.0.0.1 at 2013-03-19 14:41:06 -0400
+Processing by AlbumsController#new as JS
+  Rendered albums/_form.html.haml (1.5ms)
+  Rendered albums/new.js.erb (1.9ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/albums" for 127.0.0.1 at 2013-03-19 14:41:06 -0400
+Processing by AlbumsController#create as JS
+  Parameters: {"utf8"=>"✓", "album"=>{"name"=>"Horses"}, "commit"=>"Create Album"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:41:06 UTC +00:00], ["name", "Horses"], ["updated_at", Tue, 19 Mar 2013 18:41:06 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mAlbum Load (0.5ms)[0m  SELECT "albums".* FROM "albums" ORDER BY name
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 22[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 41
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 29[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 28
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 20[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 21
+  [1m[36m (2.1ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 26[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 38
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 40[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 42
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 30[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."album_id" = 23
+  Rendered albums/_albums.html.haml (15.9ms)
+  Rendered albums/create.js.erb (16.2ms)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 7.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "albums" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Tue, 19 Mar 2013 18:41:08 UTC +00:00], ["name", "nyc"], ["updated_at", Tue, 19 Mar 2013 18:41:08 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "photos" ("album_id", "name", "url") VALUES ($1, $2, $3) RETURNING "id"[0m  [["album_id", nil], ["name", "NYC"], ["url", "nyc.jpg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
